@@ -1,11 +1,16 @@
 import bs4
 import requests
 import smtplib
+import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
+username = os.getenv("username")
+appPassword = os.getenv("password")
 def sendEmail():
 
-    appPassword = "nssh akxo hdab pbkg"
-    username = "tharindudeshan358@gmail.com"
+    
     with smtplib.SMTP("smtp.gmail.com") as gmail:
         gmail.starttls()
         gmail.login(user=username,password=appPassword)
